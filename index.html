@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pagina pessoal de Eduardo de Oliveira Ribeiro</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+        <div class="particulas"> </div>
+
+        <nav class="navegação">
+            <ul class="menu">
+                <li><a href="#Inicio" class="menu-link">Inicio</a>
+                </li>
+                <li><a href="#sobre-titulo" class="menu-link">Sobre Mim</a>
+                </li>
+                <li><a href="#Trabalhos" class="menu-link">Trabalhos</a>
+                </li>
+                <li><a href="#contato" class="menu-link">Contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="Inicio" class="cabecalho">
+                <img src="IMG/F2.jpg" alt="Foto de Eduardo Ribeiro" class="foto-perfil">
+                <h1 class="h1">Eduardo Ribeiro</h1>
+                <p class="cabecalho-sub-titulo"> Desenvolvedor Front-End </p>
+        </main>
+
+    <section id="sobre" class="Sobre">
+
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+        <p class="sobre-paragrafo">Olá! Meu nome é Eduardo de Oliveira Ribeiro. Atualmente estou bacharelando sistema de informações na universidade UNEX. Tenho experiência em diversas tecnologias e estou sempre buscando aprender mais. No momento estou no primeiro semestre do curso, anteriormente cursei análise e desenvolvimento de sistemas na Pitágoras, conclui 3 semestres, mas por motivos maiores, acabei desistindo do curso. Desemvolvi meu interesse na área de programação graças a meu primo Leonardo, ele trabalha com programação de servidores de GTA V. Com ele aprendi a parte de manutenções em computadores e notebooks, aprendi a mexer com internet támbem.</p>
+    </div>
+    </section>
+
+    <section class="cards">
+        <h2>Soft Skills</h2>
+        <ul class="lista-skills">
+        <li>°Comunicação Assertiva</li>
+        <li>°Resiliência</li>
+        <li>°Trabalho em Equipe</li>
+        <li>°Proatividade</li>
+        <li>°Organização</li>
+        <li>°Negociação</li>
+        <li>°Persuasão</li>
+        <li>°Habilidade em solucionar probemas</li>
+        <li>°Inteligencia emocional</li>
+        <li class="Destaque">°Liderança</li>
+        </ul>
+    </section>
+
+    <section class="cards">
+        <h2>Hards Skills</h2>
+        <ul class="lista-hards-skills">
+            <li>°Conhecimento em softwares específicos, como Excel ou
+Photoshop</li>
+            <li>°Habilidade para operar equipamentos técnicos, como máquina
+de solda</li>
+            <li>°Conhecimento na área de manutenções de computadores e notebooks</li>
+            <li>°Conhecimento na área de manutenções de Ar-condionados, Geladeiras, Freezers e Maquinas de lavar</li>
+            <li>°Pensamento crítico</li>
+            <li>°Habilidades na área de manutenções em bicicletas</li>
+            <li>°Hablidade como vendedor</li>
+        </ul>
+    </section>
+
+    <section id="Trabalhos" class="Trabalhos">
+        <h2 class="Trabalhos-titulos">Meus Trabalhos</h2>
+        <div class="Trabalhos-caixa">
+            <div class="Trabalhos-card">
+                <img src="IMG./Pet.jpg" alt="Trabalho 1" class="Trabalhos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-trabalho">Pet Vida</h3>
+                <p class="paragrafo-trabalho">Trabalho informal temporário no período de 2 meses como vendedor</p>
+                </div>
+            </div>
+             <div class="Trabalhos-card">
+                <img src="IMG./Climatizar.jpg" alt="Trabalho 2" class="Trabalhos-imagem">
+                 <div class="caixa-textos-projeto">
+                <h3 class="info-trabalho">Climatizar Refrigeração</h3>
+                <p class="paragrafo-trabalho">Trabalho informal no período de 3 anos como Tecnico geral</p>
+                </div>
+            </div>
+             <div class="Trabalhos-card">
+                <img src="IMG./Faixa.jpg" alt="Trabalho 1" class="Trabalhos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-trabalho">Faixa Hotel</h3>
+                <p class="paragrafo-trabalho">Trabalho informal no período de 4 meses como Auxiliar de escritório</p>
+                </div>
+            </div>
+             <div class="Trabalhos-card">
+                <img src="IMG./DuasRodas.jpg" alt="Trabalho 1" class="Trabalhos-imagem">
+                <div class="caixa-textos-projeto">
+                <h3 class="info-trabalho">Duas Rodas Bike Shop</h3>
+                <p class="paragrafo-trabalho">Trabalho formal atual como vendedor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        
+        <form class="formulario-contato" id="Formulario" onsubmit="enviarWhats(event)"> 
+             <div class="group-form">
+                <input placeholder="Nome" class="campo-form" in="nome">
+             </div>
+
+             <div class="group-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form"> Enviar</button>
+        </form>
+        <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome');
+            const mensagem = document.getElementById('mensagem');
+            const telefone = '+5577988278144';
+
+            const texto = `Olá, me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            window.open(url, '_blank');
+
+        }
+        </script>
+    </section>    
+        </body>
+        </html>
